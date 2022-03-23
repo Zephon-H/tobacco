@@ -21,12 +21,9 @@
 </template>
 
 <script>
-// import Manage from '@/components/UserManagement/Manage'
-// import Personal1 from '@/components/UserManagement/Personal1'
-// import Pwd from '@/components/UserManagement/Pwd'
-import UserManagement from '@/components/UserManagement/UserManagement'
-import Personal from '@/components/UserManagement/Personal'
-import Password from '@/components/UserManagement/Password'
+import UserManagement from './components/UserManagement'
+import Personal from './components/Personal'
+import Password from './components/Password'
 
 export default {
   name: 'Index',

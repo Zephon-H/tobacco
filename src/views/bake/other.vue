@@ -63,9 +63,9 @@
 </template>
 
 <script>
-import FilenameOption from '@/views/bake/components/FilenameOption'
-import AutoWidthOption from '@/views/bake/components/AutoWidthOption'
-import BookTypeOption from '@/views/bake/components/BookTypeOption'
+import FilenameOption from '@/components/ExportExcel/FilenameOption'
+import AutoWidthOption from '@/components/ExportExcel/AutoWidthOption'
+import BookTypeOption from '@/components/ExportExcel/BookTypeOption'
 import { getOtherData } from '@/api/bake'
 
 export default {

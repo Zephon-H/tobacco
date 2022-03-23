@@ -43,9 +43,9 @@
 <script>
 import { getBakeData } from '@/api/bake'
 // options components
-import FilenameOption from './components/FilenameOption'
-import AutoWidthOption from './components/AutoWidthOption'
-import BookTypeOption from './components/BookTypeOption'
+import FilenameOption from '../../components/ExportExcel/FilenameOption'
+import AutoWidthOption from '../../components/ExportExcel/AutoWidthOption'
+import BookTypeOption from '../../components/ExportExcel/BookTypeOption'
 
 export default {
   name: 'Bdata',

@@ -49,7 +49,7 @@ export const constantRoutes = [
     children: [{
       path: 'home',
       name: 'Home',
-      component: () => import('@/views/dashboard/index'),
+      component: () => import('@/views/home'),
       meta: { title: '首页', icon: 'dashboard' }
     }]
   },
@@ -57,15 +57,15 @@ export const constantRoutes = [
   {
     path: '/production',
     component: Layout,
-    redirect: '/production/table',
+    redirect: '/production/data',
     name: 'Production',
     meta: { title: '生产管理', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'data',
+        name: 'Data',
+        component: () => import('@/views/production/qdata'),
+        meta: { title: '数据查询', icon: 'el-icon-data-line' }
       },
       {
         path: 'tree',
@@ -105,54 +105,20 @@ export const constantRoutes = [
   },
 
   {
-    path: '/nested',
+    path: '/control',
     component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
+    redirect: '/control/line',
+    name: 'Control',
     meta: {
       title: '智能控制',
       icon: 'el-icon-odometer'
     },
     children: [
       {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
+        path: 'line',
+        component: () => import('@/views/control/line'), // Parent router-view
+        name: 'Line',
+        meta: { title: '智能曲线' }
       },
       {
         path: 'menu2',
