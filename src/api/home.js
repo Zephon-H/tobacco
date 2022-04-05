@@ -8,4 +8,4 @@ export function dataMonitoringRequest(data) {
   })
 }
 
-export const getMapData = (params) => request.post(`/api/query`, params)
+export const getMapData = (params) => request.post(`/api/map`, params)

@@ -146,35 +146,36 @@ export default {
     // 加载省级地图
     requestGetProvinceJSON(params) {
       getMapData().then(r => {
-        console.log('getMap')
-        console.log(r)
-        const tempData = {}
-        r.data.forEach(t => {
-          // eslint-disable-next-line no-prototype-builtins
-          // eslint-disable-next-line no-prototype-builtins
-          if (!tempData.hasOwnProperty(t.location)) {
-            tempData[t.location] = [t.equipment_No]
-          } else {
-            if (tempData[t.location].indexOf(t.equipment_No) === -1) {
-              tempData[t.location].push(t.equipment_No)
-            }
-          }
-        })
-        this.deviceData = {
-          'parent': [{ 'location': '671200', 'device': { 'total': 6 }}],
-          'children': []
-        }
-        console.log('tempData:', tempData)
-        for (const k in tempData) {
-          this.deviceData['children'].push(
-            {
-              'location': '672503',
-              'device': { 'total': tempData[k].length }
-            }
-          )
-        }
-        console.log(this.deviceData)
+        // console.log('getMap')
+        // console.log(r)
+        // const tempData = {}
+        // r.data.forEach(t => {
+        //   // eslint-disable-next-line no-prototype-builtins
+        //   // eslint-disable-next-line no-prototype-builtins
+        //   if (!tempData.hasOwnProperty(t.location)) {
+        //     tempData[t.location] = [t.equipment_No]
+        //   } else {
+        //     if (tempData[t.location].indexOf(t.equipment_No) === -1) {
+        //       tempData[t.location].push(t.equipment_No)
+        //     }
+        //   }
+        // })
+        // this.deviceData = {
+        //   'parent': { 'location': '671200', 'device': { 'total': 6 }},
+        //   'children': []
+        // }
+        // console.log('tempData:', tempData)
+        // for (const k in tempData) {
+        //   this.deviceData['children'].push(
+        //     {
+        //       'location': '672503',
+        //       'device': { 'total': tempData[k].length }
+        //     }
+        //   )
+        // }
+        // console.log(this.deviceData)
         // this.deviceData = r.data
+        this.deviceData = r.data
         let hasDeviceData = this.deviceData
         const t = {}
         hasDeviceData['parent'].forEach(p => {
@@ -185,6 +186,7 @@ export default {
         //   t[String(postcodes[child.location])] = {"total": child["device_number"]}
         //   this.position2postcode[postcodes[child.location]] = child.location
         // })
+        console.log(t)
         hasDeviceData = t
         console.log(hasDeviceData)
         getProvinceJSON(params.areaCode).then(res => {
